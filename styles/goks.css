@@ -14,3 +14,7 @@
     background-color: #4CAF50;
     margin-left: 10px;
 }
+
+.goks-list-item button:active {
+    background-color: #3f8f42;
+}
