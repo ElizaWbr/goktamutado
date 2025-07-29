@@ -8,3 +8,7 @@
     background-color: orange;
     color: black;
 }
+
+.hiper-button:active {
+    background-color: rgb(216, 140, 0);
+}

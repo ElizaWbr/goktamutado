@@ -74,6 +74,7 @@
 }
 
 .button {
+    cursor: pointer;
     text-decoration: none;
     text-align: center;
     border-radius: 10px;
@@ -83,6 +84,10 @@
     padding: 10px;
     margin: 10px 0;
     border: none;
+}
+
+.button:active {
+    background-color: rgb(216, 140, 0);
 }
 
 .image {
