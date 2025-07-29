@@ -1,0 +1,19 @@
+.card {
+    background-color: #f49345;
+    border-radius: 15px;
+    width: 80vw;
+    height: 40vh;
+    max-width: 900px;
+}
+
+.title {
+    margin: 10px;
+}
+
+.submit-button {
+    border-radius: 15px;
+    background-color: #ed6c49;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+}

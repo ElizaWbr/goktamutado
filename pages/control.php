@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="../img/icons/cat.svg">
+        <link rel="stylesheet" href="../styles/index.css">
+        <link rel="stylesheet" href="../styles/control.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gok ta mutado?</title>
+    </head>
+    <body class="background-main">
+        <div class="background-main-box">
+            <div class="topbar">
+                <div class="topbar-specialz topbar-left flex-center">
+                    <a href="control.php" class="nav-button flex-center">
+                        <img src="../img/icons/home-heart.svg" alt="Home icon" class="icon"/>
+                        <span>início</span>
+                    </a>
+                </div>
+                <div class="flex-center">
+                    <a href="prove.php" class="nav-button color-white">atualizar status</a>
+                    <a href="goks.php" class="nav-button color-white">possíveis goks</a>
+                    <a href="info.php" class="nav-button color-white">dados</a>
+                </div>
+                <div class="topbar-specialz topbar-right flex-center">
+                    <a href="contact.php" class="nav-button flex-center">
+                        <img src="../img/icons/phone.svg" alt="Contact" class="icon"/>
+                        <span>contato</span>
+                    </a>
+                </div>
+            </div>
+            <div class="full-screen flex-center">
+                <div class="half-page flex-center justify-left">
+                    <div class="container">
+                        <div class="flex-column">
+                            <h1 class="no-margin">
+                                Gok está
+                            </h1>
+                            <h1 class="gok-state no-margin">
+                                Mutado
+                                <div class="red-circle"></div>
+                            </h1>
+                        </div>
+                        <p class="no-margin">
+                            Você é o Gok? Nos deixe saber que está online.
+                        </p>
+                        <a href="prove.php" class="button">Prove ser o Gok</a>
+                    </div>
+                </div>
+                <div class="half-page flex-center justify-right">
+                    <img class="image" src="../img/Attention.svg"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

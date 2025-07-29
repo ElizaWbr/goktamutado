@@ -1,0 +1,42 @@
+
+.graph-container {
+    height: 500px;
+    width: 100%;
+    border-bottom: 10px solid black;
+    border-left: 10px solid black;
+    margin-top: 20px;
+}
+
+.unmuted-text {
+    position: relative;
+    top: 100px;
+    left: -100px;
+}
+
+.muted-text {
+    position: relative;
+    top: 200px;
+    left: -70px;
+}
+
+.graph-icon-up {
+    position: relative;
+    height: 80px;
+    top: calc(0% - 40px);
+    left: -45px;
+}
+
+.graph-icon-right {
+    position: relative;
+    height: 80px;
+    top: 342px;
+    left: calc(100% - 40px);
+}
+
+.graph-the-line {
+    position: relative;
+    top: 212px;
+    width: 100000000000%;
+    height: 3px;
+    background-color: orange;
+}

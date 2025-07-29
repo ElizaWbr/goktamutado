@@ -1,0 +1,136 @@
+.background-main {
+    background-color: black;
+}
+
+.background-main-box {
+    background-color: #f6f6f8;
+    margin: 50px;
+    border-radius: 0 0 20px 20px;
+}
+
+.full-screen {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-page {
+    width: 45%;
+    height: 100%;
+}
+
+/* Topbar */
+
+.topbar-specialz {
+    background-color: orange;
+    height: 100%;
+    width: 200px;
+    border-radius: 20px 20px 0 0;
+}
+
+.topbar-specialz .nav-button {
+    padding: 0;
+}
+
+.topbar-specialz .nav-button .icon {
+    padding: 0 5px 0 0;
+}
+
+.topbar-specialz .nav-button span {
+    height: 15px;
+}
+
+.topbar {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    margin: 0 -20px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar-right {
+    background-color: orange;
+}
+
+.nav-button {
+    padding: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* /Topbar */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    background-color: orange;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    color: black;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+}
+
+.image {
+    max-height: 50vh;
+    max-width: -webkit-fill-available;
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+    padding: 0 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.color-white {
+    color: white;
+}
+
+/* Flex */
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-stretch {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.justify-left {
+    justify-content: flex-end !important;
+    margin-right:10px;
+}
+.justify-right {
+    justify-content: flex-start !important;
+    margin-left: 10px;
+}

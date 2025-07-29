@@ -1,0 +1,8 @@
+.error-message {
+    position: absolute;
+    display: flex;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+    top: 27%;
+}

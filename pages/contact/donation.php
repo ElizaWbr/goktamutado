@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="../../img/icons/cat.svg">
+        <link rel="stylesheet" href="../../styles/index.css">
+        <link rel="stylesheet" href="../../styles/donation.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Doe para essa causa</title>
+    </head>
+    <body class="background-main">
+        <div class="background-main-box">
+            <div class="topbar">
+                <div class="topbar-specialz topbar-left flex-center">
+                    <a href="../control.php" class="nav-button flex-center">
+                        <img src="../../img/icons/home-heart.svg" alt="Home icon" class="icon"/>
+                        <span>início</span>
+                    </a>
+                </div>
+                <div class="flex-center">
+                    <a href="../prove.php" class="nav-button color-white">atualizar status</a>
+                    <a href="../goks.php" class="nav-button color-white">possíveis goks</a>
+                    <a href="../info.php" class="nav-button color-white">dados</a>
+                </div>
+                <div class="topbar-specialz topbar-right flex-center">
+                    <a href="../contact.php" class="nav-button flex-center">
+                        <img src="../../img/icons/phone.svg" alt="Contact" class="icon"/>
+                        <span>contato</span>
+                    </a>
+                </div>
+            </div>
+            <div class="full-screen flex-center">
+                <img src="../../img/gato-placa.svg" alt="Erro" style="height: 80%;"/>
+                <div class="error-message">
+                    <b style="font-size: 200px;">404</b>
+                    <span style="font-size: 40px;">Página não encontrada</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
