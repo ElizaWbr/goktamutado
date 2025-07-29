@@ -40,3 +40,9 @@
     height: 3px;
     background-color: orange;
 }
+
+.graph-dates {
+    position: relative;
+    top: 315px;
+    width: 100000000000%;
+}
