@@ -13,7 +13,11 @@ const db = firebase.firestore();
 
 async function addProvaGok(data) {
     try {
-        const newDocRef = await db.collection("possiveisGoks").add({ argumento: data });
+        const newDocRef = await db.collection("possiveisGoks").add({
+            argumento: data,
+            fixado: false,
+            criadoEm: firebase.firestore.FieldValue.serverTimestamp()
+        });
     } catch (e) {
         console.error("Error writing document: ", e);
     }
@@ -25,10 +29,26 @@ async function getAllGoks() {
         const allGoks = [];
 
         snapshot.forEach((doc) => {
-            allGoks.push(doc.data().argumento);
+            const data = doc.data();
+            allGoks.push({
+                argumento: data.argumento,
+                criadoEm: data.criadoEm || null,
+                fixado: data.fixado || false,
+            });
         });
 
-        return allGoks;
+        allGoks.sort((a, b) => {
+            if (a.criadoEm && b.criadoEm) {
+                return b.criadoEm.toDate() - a.criadoEm.toDate();
+            } else if (a.criadoEm) {
+                return -1;
+            } else if (b.criadoEm) {
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+        return allGoks.map(item => item.argumento);
     } catch (e) {
         console.error("Erro ao buscar os dados: ", e);
         return [];

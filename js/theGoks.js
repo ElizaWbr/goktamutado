@@ -1,7 +1,7 @@
 let validateButton = "<button class='validate-buttons button'><img src='../img/icons/check-bold.svg' alt='Check' class='icon'/></button>";
 let goks = await getAllGoks();
 
-if(goks.length > 0){
+if (goks.length > 0) {
     goks.forEach((gok) => {
         let content = "";
 
@@ -32,8 +32,6 @@ if(goks.length > 0){
     content += "<a href='prove.html'>aqui</a>.</span>";
     content += "</span>";
     content += "</p>";
-
-    console.log(content);
 
     document.getElementById('goks-container').innerHTML += content;
 }
