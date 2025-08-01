@@ -23,6 +23,8 @@ if (goks.length > 0) {
             alert(message);
         });
     }
+    
+    disableLoader();
 } else {
     let content = "";
 
@@ -34,4 +36,5 @@ if (goks.length > 0) {
     content += "</p>";
 
     document.getElementById('goks-container').innerHTML += content;
+    disableLoader();
 }

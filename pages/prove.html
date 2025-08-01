@@ -9,6 +9,17 @@
         <title>Prove ser o Gok</title>
     </head>
     <body class="background-main">
+        <!-- Start loader -->
+        <link rel="stylesheet" href="../styles/loader.css">
+        <script src="../js/loader.js"></script>
+        <div id="loader" class="loader-container">
+            <div class="loader">
+                <div class="dot dot1"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+            </div>
+        </div>
+        <!-- End loader -->
         <div class="background-main-box">
             <div class="topbar">
                 <div class="topbar-specialz topbar-left flex-center">
@@ -34,35 +45,15 @@
                     <img class="image" src="../img/Prove.svg"/>
                 </div>
                 <div class="half-page flex-center justify-right">
-                    <div class="container">
-                        <div class="flex-center">
-                            <h1 class="no-margin">
-                                Prove ser o gok
-                            </h1>
-                        </div>
-                        <form id="provaGokForm" method="post">
-                            <div class="flex-stretch flex-column">
-                                <label for="prova-gok" style="margin-bottom: 10px;">Diga algo que apenas o Gok saberia</label>
-                                <textarea name="prova_gok" id="prova-gok" placeholder="Algo que apenas o Gok saberia"></textarea>
-                                <button id="provaGokSubmitButton" class="button" type="submit">Enviar</button>
-                            </div>
-                        </form>
-                        <p id="addedProvaGok" class="hidden">
-                            <span>
-                                Iremos verificar se a prova e boa e atualizaremos o status, mas provavelmente está mentindo. Gok. sempre. está. mutado.
-                            </span>
-                            <br>
-                            <span id="theProvaGok"></span>
-                        </p>
-                        <div>
-                            Mentiste? <a href="control.html">Volte, babaca.</a>
-                        </div>
+                    <div id="update-status-prove-ser-o-gok" class="container">
+                        <!-- Added with js -->
                     </div>
                 </div>
             </div>
         </div>
         <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 
         <script type="module" src="../main.js"></script>
         <script type="module" src="../js/newGoks.js"></script>

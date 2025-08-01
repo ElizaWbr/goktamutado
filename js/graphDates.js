@@ -27,3 +27,7 @@ function displayYear(year, posX) {
 
 container.addEventListener('scroll', checkScroll);
 checkScroll();
+
+window.addEventListener("load", () => {
+    disableLoader();
+});

@@ -2,8 +2,8 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <link rel="icon" href="../../img/icons/cat.svg">
-        <link rel="stylesheet" href="../../styles/index.css">
+        <link rel="icon" href="../img/icons/cat.svg">
+        <link rel="stylesheet" href="../styles/index.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Falar com a mãe do Gok</title>
     </head>
@@ -11,26 +11,26 @@
         <div class="background-main-box">
             <div class="topbar">
                 <div class="topbar-specialz topbar-left flex-center">
-                    <a href="../control.html" class="nav-button flex-center">
-                        <img src="../../img/icons/home-heart.svg" alt="Home icon" class="icon"/>
+                    <a href="control.html" class="nav-button flex-center">
+                        <img src="../img/icons/home-heart.svg" alt="Home icon" class="icon"/>
                         <span>início</span>
                     </a>
                 </div>
                 <div class="flex-center">
-                    <a href="../prove.html" class="nav-button color-white">atualizar status</a>
-                    <a href="../goks.html" class="nav-button color-white">possíveis goks</a>
-                    <a href="../info.html" class="nav-button color-white">dados</a>
+                    <a href="prove.html" class="nav-button color-white">atualizar status</a>
+                    <a href="goks.html" class="nav-button color-white">possíveis goks</a>
+                    <a href="info.html" class="nav-button color-white">dados</a>
                 </div>
                 <div class="topbar-specialz topbar-right flex-center">
-                    <a href="../contact.html" class="nav-button flex-center">
-                        <img src="../../img/icons/phone.svg" alt="Contact" class="icon"/>
+                    <a href="contact.html" class="nav-button flex-center">
+                        <img src="../img/icons/phone.svg" alt="Contact" class="icon"/>
                         <span>contato</span>
                     </a>
                 </div>
             </div>
             <div class="full-screen flex-center">
                 <div class="half-page flex-center justify-left">
-                    <img class="image" src="../../img/just-cat.svg"/>
+                    <img class="image" src="../img/just-cat.svg"/>
                 </div>
                 <div class="half-page flex-center justify-right">
                     <div class="container">
@@ -38,11 +38,16 @@
                         <p class="no-margin">Você tem certeza sobre isso?</p>
                         <div style="margin: 20px 0;">
                             <a class="button" href="the-gok-mom.html">Tenho certeza</a>
-                            <a class="button" href="../contact.html">Voltar</a>
+                            <a class="button" href="contact.html">Voltar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+        <script type="module" src="../main.js"></script>
     </body>
 </html>
