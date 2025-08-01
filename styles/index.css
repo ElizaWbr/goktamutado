@@ -18,7 +18,7 @@
 }
 
 .half-page {
-    width: 45%;
+    width: 45% !important;
     height: 100%;
 }
 
@@ -73,6 +73,11 @@
     align-items: flex-start;
 }
 
+.link-button {
+    font-size: 12px;
+    text-align: center;
+}
+
 .button {
     cursor: pointer;
     text-decoration: none;
@@ -113,6 +118,22 @@
     color: white;
 }
 
+.color-success {
+    color: #4CAF50;
+}
+
+input {
+    border-radius: 5px;
+    padding: 10px;
+    border-color: #d5d5d5;
+}
+
+textarea {
+    border-radius: 5px;
+    padding: 10px;
+    border-color: #d5d5d5;
+}
+
 /* Flex */
 
 .flex-center {
@@ -138,4 +159,15 @@
 .justify-right {
     justify-content: flex-start !important;
     margin-left: 10px;
+}
+
+.error-message {
+    font-size: 15px;
+    color: red;
+    text-align: center;
+}
+
+.success-message {
+    font-size: 15px;
+    text-align: center;
 }

@@ -11,3 +11,11 @@
     background-color: red;
     margin: 10px;
 }
+
+.success-circle {
+    border-radius: 100px;
+    width: 25px;
+    height: 25px;
+    background-color: #4CAF50;
+    margin: 10px;
+}
