@@ -10,6 +10,15 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
+.gok-list-item-title {
+    display: flex;
+    align-items: center;
+}
+
+.gok-list-item-title .icon {
+    padding: 0 10px 0 0;
+}
+
 .goks-list-item button {
     background-color: #4CAF50;
     margin-left: 10px;

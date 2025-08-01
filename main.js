@@ -36,6 +36,15 @@ async function addGoksRealStatists() {
 }
 /* End add data */
 
+/* Update data */
+async function updateFixedGok(id, newVal) {
+    await db.collection("possiveisGoks").doc(id).set({
+        fixado: newVal
+    }, { merge: true });
+}
+window.updateFixedGok = updateFixedGok;
+/* /Update data */
+
 /* Get data */
 async function getAllGoks() {
     try {
@@ -48,21 +57,20 @@ async function getAllGoks() {
                 argumento: data.argumento,
                 criadoEm: data.criadoEm || null,
                 fixado: data.fixado || false,
+                id: doc.id,
             });
         });
 
         allGoks.sort((a, b) => {
-            if (a.criadoEm && b.criadoEm) {
-                return b.criadoEm.toDate() - a.criadoEm.toDate();
-            } else if (a.criadoEm) {
-                return -1;
-            } else if (b.criadoEm) {
-                return 1;
-            } else {
-                return 0;
-            }
+            if (a.fixado && !b.fixado) return -1;
+            if (!a.fixado && b.fixado) return 1;
+
+            const dataA = a.criadoEm ? a.criadoEm.toDate() : new Date(0);
+            const dataB = b.criadoEm ? b.criadoEm.toDate() : new Date(0);
+            
+            return dataB - dataA;
         });
-        return allGoks.map(item => item.argumento);
+        return allGoks;
     } catch (e) {
         alert("Um erro foi gerado, por favor tire um print completo dessa tela e envie para Elisa: " + JSON.stringify(e));
         return [];
@@ -123,7 +131,7 @@ async function getValidUsers() {
     }
 }
 
-async function getCurrentMutedStatus(){
+async function getCurrentMutedStatus() {
     const snapshot = await firebase.firestore().collection("gokStatus").orderBy("data", "desc").limit(1).get();
     if (!snapshot.empty) {
         const doc = snapshot.docs[0];
@@ -135,8 +143,8 @@ async function getCurrentMutedStatus(){
 }
 window.getCurrentMutedStatus = getCurrentMutedStatus;
 
-async function getCurrentUserRole(){
-    const user = await firebase.auth().currentUser;
+async function getCurrentUserRole() {
+    let user = await firebase.auth().currentUser;
     if (!user) {
         return "empty";
     }
