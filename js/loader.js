@@ -1,9 +1,17 @@
 function disableLoader(){
-    document.getElementById("loader").style.display = "none";
+    const loaderContainer = document.getElementById("loader");
+
+    loaderContainer.classList.add("invisibility");
+    setTimeout(() => {
+        loaderContainer.style.display = "none";
+    }, 500);
 }
 window.disableLoader = disableLoader;
 
 function ableLoader(){
-    document.getElementById("loader").style.display = "";
+    const loaderContainer = document.getElementById("loader");
+
+    loaderContainer.style.display = "";
+    loaderContainer.classList.removeClass("invisibility");
 }
 window.ableLoader = ableLoader;
