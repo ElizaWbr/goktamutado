@@ -46,3 +46,89 @@
     top: 315px;
     width: 100000000000%;
 }
+
+/* Real Graph */
+.real-graph-container {
+    max-height: 500px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gok-messages-container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+    width: -webkit-fill-available;
+}
+
+.gok-messages-container .goks-list-item {
+    min-height: 40px;
+    width: -webkit-fill-available;
+    padding: 20px;
+}
+
+.real-graph-infos-container {
+    width: calc(100% - 40px);
+    padding: 20px;
+    height: -webkit-fill-available;
+}
+
+.fit-available {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+}
+
+.gok-messsages-card-header {
+    background-color: orange;
+    border-radius: 10px 10px 0 0;
+    height: 50px;
+    width: -webkit-fill-available;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gok-box-shadow-header {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    width: 70%;
+    border-radius: 10px;
+}
+
+.gok-messages-background-fullsize-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -50%;
+    right: 150%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

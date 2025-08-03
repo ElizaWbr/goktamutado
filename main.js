@@ -80,20 +80,30 @@ window.getAllGoks = getAllGoks;
 
 async function getGoksRealStatists() {
     try {
-        const snapshot = await firebase.firestore().collection("goksStatistics").get();
+        const snapshot = await firebase.firestore().collection("gokStatus").get();
         const goksRealStatistics = [];
 
         snapshot.forEach((doc) => {
             const data = doc.data();
-            goksRealStatistics.push(data.desmutadoEm);
+            if (data.deixadaPor != "admin") {
+                goksRealStatistics.push(data);
+            }
         });
 
+        goksRealStatistics.sort((a, b) => {
+            const dataA = a.data ? a.data.toDate() : new Date(0);
+            const dataB = b.data ? b.data.toDate() : new Date(0);
+            
+            return dataA - dataB;
+        });
+        
         return goksRealStatistics;
     } catch (e) {
         alert("Um erro foi gerado, por favor tire um print completo dessa tela e envie para Elisa: " + JSON.stringify(e));
         return [];
     }
 }
+window.getGoksRealStatists = getGoksRealStatists;
 
 async function getValidUsersEmails() {
     try{

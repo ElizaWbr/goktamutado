@@ -12,7 +12,7 @@ if (goks.length > 0) {
         content = "<p class='no-margin goks-list-item'>";
         content += "<span class='gok-list-item-title'>";
         if (gok.fixado == true) {
-            content += "<img src='../img/icons/star.svg' alt='Check' class='icon' />";
+            content += "<img src='../img/icons/wizard-hat.svg' alt='Check' class='icon' />";
         }
 
         content += "<span style='height: 12px;'>" + gok.argumento + "</span>";
