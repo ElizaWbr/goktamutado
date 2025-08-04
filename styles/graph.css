@@ -121,10 +121,11 @@
 }
 
 .tooltip:hover {
-    background-color: #00000008;
+    background-color: #00000015;
 }
 
 .tooltip .tooltiptext {
+    visibility: hidden;
     opacity: 0;
     transition: opacity .5s ease;
     width: 120px;
@@ -140,6 +141,7 @@
 }
 
 .tooltip:hover .tooltiptext {
+    visibility: visible;
     opacity: 1;
     transition: opacity .5s ease;
 }
