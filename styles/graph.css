@@ -50,7 +50,7 @@
 /* Real Graph */
 .real-graph-container {
     max-height: 500px;
-    width: calc(100% - 40px);
+    width: calc(80% - 40px);
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -78,6 +78,7 @@
     width: calc(100% - 40px);
     padding: 20px;
     height: -webkit-fill-available;
+    align-items: center;
 }
 
 .fit-available {
@@ -144,4 +145,20 @@
     visibility: visible;
     opacity: 1;
     transition: opacity .5s ease;
+}
+
+#update-jackometro {
+    background-image: url(../img/icons/cat-orange.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 70%;
+    border: 0;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+#update-jackometro:active {
+    background-image: url('../img/icons/cat-orange-dark.svg');
 }

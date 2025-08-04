@@ -113,6 +113,7 @@ function displayLoginPage(){
     document.getElementById('loginForm').addEventListener('submit', async function(event) {
         event.preventDefault();
 
+        ableLoader();
         const formData = new FormData(this);
         let email = formData.get('login_email');
         let password = formData.get('login_password');

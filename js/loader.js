@@ -12,6 +12,6 @@ function ableLoader(){
     const loaderContainer = document.getElementById("loader");
 
     loaderContainer.style.display = "";
-    loaderContainer.classList.removeClass("invisibility");
+    loaderContainer.classList.remove("invisibility");
 }
 window.ableLoader = ableLoader;

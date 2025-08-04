@@ -105,6 +105,31 @@ async function getGoksRealStatists() {
 }
 window.getGoksRealStatists = getGoksRealStatists;
 
+async function getJacometroStatists(){
+    try {
+        const snapshot = await firebase.firestore().collection("jackometro").get();
+        const jacometroStatistics = [];
+
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            jacometroStatistics.push(data);
+        });
+
+        jacometroStatistics.sort((a, b) => {
+            const dataA = a.data ? a.data.toDate() : new Date(0);
+            const dataB = b.data ? b.data.toDate() : new Date(0);
+            
+            return dataA - dataB;
+        });
+
+        return jacometroStatistics;
+    } catch (e) {
+        alert("Um erro foi gerado, por favor tire um print completo dessa tela e envie para Elisa: " + JSON.stringify(e));
+        return [];
+    }
+}
+window.getJacometroStatists = getJacometroStatists;
+
 async function getValidUsersEmails() {
     try{
         let validUsers = await getValidUsers();
@@ -154,7 +179,7 @@ async function getCurrentMutedStatus() {
 window.getCurrentMutedStatus = getCurrentMutedStatus;
 
 async function getCurrentUserRole() {
-    let user = await firebase.auth().currentUser;
+    let user = await getUserWhenReady();
     if (!user) {
         return "empty";
     }
@@ -190,7 +215,7 @@ async function validateUserAndLogin(email, password){
 window.validateUserAndLogin = validateUserAndLogin;
 
 /* Auth process */
-async function signIn(email, password){
+async function signIn(email, password) {
     let currentUser = firebase.auth().currentUser;
     if (currentUser) {
         window.location.replace("my-account.html");
@@ -334,3 +359,24 @@ async function updateStatusGok(mensagemVal, fromVal, mutadoVal) {
     }
 }
 window.updateStatusGok = updateStatusGok;
+
+async function updateJackometro() {
+    try {
+        const newDocRef = await db.collection("jackometro").add({
+            data: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        return newDocRef;
+    } catch (e) {
+        alert("Um erro foi gerado, por favor tire um print completo dessa tela e envie para Elisa: " + JSON.stringify(e));
+    }
+}
+window.updateJackometro = updateJackometro;
+
+function getUserWhenReady() {
+    return new Promise(resolve => {
+        const unsubscribe = firebase.auth().onAuthStateChanged(user => {
+            unsubscribe();
+            resolve(user);
+        });
+    });
+}

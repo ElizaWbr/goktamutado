@@ -1,4 +1,3 @@
-
 await createRealGraph();
 
 async function createRealGraph() {
@@ -186,10 +185,6 @@ function createDailyChangesChart(labels, valores, firstTime, endTime) {
                             day: 'dd/MM/yyyy'
                         }
                     },
-                    title: {
-                        display: true,
-                        text: 'Date'
-                    },
                     min: firstTime,
                     max: endTime
                 },
@@ -344,6 +339,7 @@ function createLineChart(labels, valores, descricoes, firstTime, endTime) {
 }
 
 function displayGoksMessages(mensagensGok) {
+    mensagensGok.reverse(); //Ta ordenado da primeira data pra última, mas nesse caso quero a última mensagem no topo
     mensagensGok.forEach(data => {
         let content = "<p class='no-margin goks-list-item'><span>" + data.mensagem + "</span>";
         content += "<span class='tooltip'>";
