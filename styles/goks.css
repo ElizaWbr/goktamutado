@@ -15,6 +15,10 @@
     align-items: center;
 }
 
+.gok-list-item-title span {
+    text-box-trim: trim-both;
+}
+
 .gok-list-item-title .icon {
     padding: 0 10px 0 0;
 }

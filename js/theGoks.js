@@ -15,7 +15,7 @@ if (goks.length > 0) {
             content += "<img src='../img/icons/wizard-hat.svg' alt='Check' class='icon' />";
         }
 
-        content += "<span style='height: 12px;'>" + gok.argumento + "</span>";
+        content += "<span>" + gok.argumento + "</span>";
         content += "</span>";
 
         if (addPinButtons) {
