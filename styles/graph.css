@@ -112,11 +112,21 @@
 
 .tooltip {
     position: relative;
-    display: inline-block;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.tooltip:hover {
+    background-color: #00000008;
 }
 
 .tooltip .tooltiptext {
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease;
     width: 120px;
     background-color: black;
     color: #fff;
@@ -125,10 +135,11 @@
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    bottom: -50%;
+    bottom: -10%;
     right: 150%;
 }
 
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    opacity: 1;
+    transition: opacity .5s ease;
 }
