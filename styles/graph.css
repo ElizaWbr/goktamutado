@@ -122,6 +122,10 @@
     justify-content: center;
 }
 
+.tooltip .icon {
+    padding: 0 10px;
+}
+
 .tooltip:hover {
     background-color: #00000020;
 }
