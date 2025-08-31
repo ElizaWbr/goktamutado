@@ -120,6 +120,7 @@
     align-items: center;
     border-radius: 50%;
     justify-content: center;
+    word-break: break-word;
 }
 
 .tooltip .icon {
