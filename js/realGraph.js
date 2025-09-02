@@ -2,7 +2,7 @@ await createRealGraph();
 
 async function createRealGraph() {
     let realData = await getGoksRealStatists();
-
+    
     let dataHoje = new Date();
     // dataHoje.setDate(dataHoje.getDate() - 1);
     let todayDateString = dataHoje.toDateString();
@@ -284,20 +284,16 @@ function createLineChart(labels, valores, descricoes, firstTime, endTime) {
                 x: {
                     type: 'time',
                     time: {
-                        unit: 'hour',
-                        tooltipFormat: 'dd/MM/yyyy HH:mm'
+                        unit: 'day',
+                        tooltipFormat: 'dd/MM/yyyy',
+                        displayFormats: {
+                            day: 'dd/MM/yyyy'
+                        }
                     },
                     ticks: {
                         callback: function(value, index) {
                             const date = new Date(value);
-                            const hours = date.getHours().toString().padStart(2, '0');
-                            const minutes = date.getMinutes().toString().padStart(2, '0');
-
-                            if (index == 0 || (hours === '00' && minutes === '00')) {
-                                return date.toLocaleDateString('pt-BR') + ` ${hours}:${minutes}`;
-                            }
-
-                            return `${hours}:${minutes}`;
+                            return date.toLocaleDateString('pt-BR');
                         },
                     },
                     min: firstTime,
