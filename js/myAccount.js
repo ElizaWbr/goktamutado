@@ -34,7 +34,7 @@ function displayGokMutedAccountPage() {
         let mensagemGok = formData.get('mensagem_gok');
         if (mensagemGok == ""){
             document.getElementById('gok-status-update-error-message').innerHTML = "Ué, cade a mensagem secreta?";
-        } else if(mensagemGok.length < 10) {
+        } else if(mensagemGok.replaceAll(" ", "").length < 10) {
             document.getElementById('gok-status-update-error-message').innerHTML = "Nah, adiciona mais coisa ai";
         } else {
             let currentRole = await getCurrentUserRole();
