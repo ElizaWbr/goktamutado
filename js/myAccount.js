@@ -64,7 +64,9 @@ function displayGokNotMutedAccountPage(){
 }
 
 function adminMyAccountPage() {
-    let adminContent = "<p>Bem vindo admin, não tem nada de especial pra você aqui, só cheque a forma que as informações são exibidas para o Gok.</p>";
+    let adminContent = "<p>Bem vindo admin, cheque a forma que as informações são exibidas para o Gok e gerencie Goks.</p>";
+    adminContent += "<p><a href='manage-goks.html' class='button'>Gerenciar registros</a></p>";
+    adminContent += "<div style='height: 1px; background-color: #ccc; margin: 20px 0;'></div>"
     myAccountContainer.innerHTML += adminContent;
 }
 

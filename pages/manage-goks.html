@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="../img/icons/cat.svg">
+        <link rel="stylesheet" href="../styles/index.css">
+        <link rel="stylesheet" href="../styles/goks.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gerenciar Goks</title>
+    </head>
+    <body class="background-main">
+        <!-- Start loader -->
+        <link rel="stylesheet" href="../styles/loader.css">
+        <script src="../js/loader.js"></script>
+        <div id="loader" class="loader-container">
+            <div class="loader">
+                <div class="dot dot1"></div>
+                <div class="dot dot2"></div>
+                <div class="dot dot3"></div>
+            </div>
+        </div>
+        <!-- End loader -->
+        <div class="background-main-box">
+            <div class="topbar">
+                <div class="topbar-specialz topbar-left flex-center">
+                    <a href="control.html" class="nav-button flex-center">
+                        <img src="../img/icons/home-heart.svg" alt="Home icon" class="icon"/>
+                        <span>início</span>
+                    </a>
+                </div>
+                <div class="flex-center">
+                    <a href="prove.html" class="nav-button color-white">atualizar status</a>
+                    <a href="goks.html" class="nav-button color-white">possíveis goks</a>
+                    <a href="info.html" class="nav-button color-white">dados</a>
+                    <a href="jackometro.html" class="nav-button color-white">jackometro</a>
+                    <div id="navbar-auth-items">
+                        <a href="my-account.html" class="nav-button color-white" id="login-nav-button">login</a>
+                    </div>
+                </div>
+                <div class="topbar-specialz topbar-right flex-center">
+                    <a href="contact.html" class="nav-button flex-center">
+                        <img src="../img/icons/phone.svg" alt="Contact" class="icon"/>
+                        <span>contato</span>
+                    </a>
+                </div>
+            </div>
+            <div class="full-screen" style="display: flex;flex-direction: column;align-items: center;">
+                <h2>Gerenciar Goks</h2>
+                <div id="manage-goks-container" class="container" style="padding-bottom: 20px;"></div>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+        <script type="module" src="../main.js"></script>
+        <script type="module" src="../js/manageGoks.js"></script>
+    </body>
+</html>

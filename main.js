@@ -43,6 +43,14 @@ async function updateFixedGok(id, newVal) {
     }, { merge: true });
 }
 window.updateFixedGok = updateFixedGok;
+
+async function updateStatus(id, novaData, novaMensagem) {
+    await db.collection("gokStatus").doc(id).set({
+        data: novaData,
+        mensagem: novaMensagem
+    }, { merge: true });
+}
+window.updateStatus = updateStatus;
 /* /Update data */
 
 /* Get data */
@@ -86,6 +94,7 @@ async function getGoksRealStatists() {
         snapshot.forEach((doc) => {
             const data = doc.data();
             if (data.deixadaPor != "admin") {
+                data.id = doc.id;
                 goksRealStatistics.push(data);
             }
         });
@@ -96,7 +105,12 @@ async function getGoksRealStatists() {
             
             return dataA - dataB;
         });
-        
+
+        let currentRole = await getCurrentUserRole();
+        if (currentRole == "admin") {
+            console.log(goksRealStatistics);
+        }
+            
         return goksRealStatistics;
     } catch (e) {
         alert("Um erro foi gerado, por favor tire um print completo dessa tela e envie para Elisa: " + JSON.stringify(e));
