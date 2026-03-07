@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../styles/index.css">
         <link rel="stylesheet" href="../styles/graph.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Jackometro</title>
+        <title>NÃO JACK</title>
     </head>
     <body class="background-main">
         <!-- Start loader -->
@@ -32,7 +32,6 @@
                     <a href="prove.html" class="nav-button color-white">atualizar status</a>
                     <a href="goks.html" class="nav-button color-white">possíveis goks</a>
                     <a href="info.html" class="nav-button color-white">dados</a>
-                    <a href="jackometro.html" class="nav-button color-white">jackometro</a>
                     <div id="navbar-auth-items">
                         <a href="my-account.html" class="nav-button color-white" id="login-nav-button">login</a>
                     </div>
@@ -49,28 +48,14 @@
                     <div class="real-graph-container">
                         <div class="half-page">
                             <div class="flex-center" style="flex-direction: column;height: 100%;">
-                                <h1>Jackometro</h1>
+                                <h1>Não, ele não é jack</h1>
                                 <span id="gok-status-count" style="font-size: 200px;font-weight: bolder;"></span>
                             </div>
                         </div>
-                        <div id="update-jackometro-container" class="half-page flex-center" style="max-height: 300px;display: none;">
-                        </div>
-                    </div>
-                    <div class="real-graph-container">
-                        <canvas id="jackometro-daily-changes" width="400" height="100"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </body>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
-
     <script type="module" src="../main.js"></script>
-    <script type="module" src="../js/jackometro.js"></script>
 </html>
