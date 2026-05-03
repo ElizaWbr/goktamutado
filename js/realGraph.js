@@ -337,12 +337,12 @@ function createLineChart(labels, valores, descricoes, firstTime, endTime) {
 function displayGoksMessages(mensagensGok) {
     mensagensGok.reverse(); //Ta ordenado da primeira data pra última, mas nesse caso quero a última mensagem no topo
     mensagensGok.forEach(data => {
-        let content = "<p class='no-margin goks-list-item'><span>" + data.mensagem + "</span>";
+        let content = "<div class='no-margin goks-list-item'><span>" + data.mensagem + "</span>";
         content += "<span class='tooltip'>";
         content += "<span class='tooltiptext'>" + data.date + "</span>"
         content += "<img src='../img/icons/wizard-hat.svg' alt='Wizard hat' class='icon'/>";
         content += "</span>"
-        content += "</p>";
+        content += "</div>";
         document.getElementById('gok-messages-list').innerHTML += content;
     });
     document.getElementById('gok-messages-list').innerHTML += "<br>";
