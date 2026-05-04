@@ -73,7 +73,6 @@ function buildItems() {
 
     let validateButton = "<button type='submit' class='validate-buttons button'><img src='../img/icons/check-bold.svg' alt='Check' class='icon'/></button>";
 
-    realData.reverse();
     realData.forEach((data) => {
         let content = "";
         content += "<div class='no-margin goks-list-item' style='justify-content: center;align-items: normal;flex-direction: column;'>";
