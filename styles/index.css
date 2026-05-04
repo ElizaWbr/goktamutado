@@ -91,8 +91,16 @@
     border: none;
 }
 
-.button:active {
+.button:not(:disabled):active {
     background-color: rgb(216, 140, 0);
+}
+
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #ccc;
+    color: #666;
+    box-shadow: none;
 }
 
 .hiper-button {
@@ -162,6 +170,7 @@ textarea {
     align-items: center;
     justify-content: center;
 }
+
 .flex-column {
     display: flex;
     flex-direction: column;
@@ -175,8 +184,9 @@ textarea {
 
 .justify-left {
     justify-content: flex-end !important;
-    margin-right:10px;
+    margin-right: 10px;
 }
+
 .justify-right {
     justify-content: flex-start !important;
     margin-left: 10px;

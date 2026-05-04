@@ -3,13 +3,78 @@ if (currentRole != "admin") {
     window.location.replace("control.html");
 }
 
-let realData = await getGoksRealStatists();
-let validateButton = "<button type='submit' class='validate-buttons button'><img src='../img/icons/check-bold.svg' alt='Check' class='icon'/></button>";
+let limitPerPage = 10;
+let currentPage = 1;
+let history = [];
+let cursors = [];
+let lastDoc = null;
+let hasMore = false;
 
-if (realData.length > 0) {
+let realData = [];
+
+const btnPrev = document.getElementById("goks-real-statists-prev-page");
+const btnNext = document.getElementById("goks-real-statists-next-page");
+
+await loadPage();
+
+btnPrev.addEventListener("click", async function () {
+    if (currentPage === 1){
+        return;
+    }
+    currentPage--;
+    await loadPage("prev");
+});
+
+btnNext.addEventListener("click", async function () {
+    if (!hasMore) {
+        return;
+    }
+    currentPage++;
+    await loadPage("next");
+});
+
+async function loadPage(direction = "next") {
+    ableLoader();
+
+    let cursor = null;
+
+    if (direction === "next") {
+        cursor = cursors[currentPage - 1] || null;
+    }
+
+    if (direction === "prev") {
+        cursor = cursors[currentPage - 2] || null;
+    }
+
+    const response = await getGoksRealStatistsLimit(limitPerPage, cursor);
+
+    realData = response.data;
+    hasMore = response.hasMore;
+
+    cursors[currentPage] = response.lastDoc;
+    buildItems();
+}
+
+function buildItems() {
+    document.getElementById('manage-goks-container').innerHTML = "";
+    document.getElementById("goks-real-statists-current-page").textContent = `Página ${currentPage}`;
+
+    btnPrev.disabled = currentPage === 1;
+    btnNext.disabled = !hasMore;
+
+    if (realData.length <= 0) {
+        let content = "<p style='justify-content: center;align-items: normal;flex-direction: column'>";
+        content += "Sem registros";
+        content += "</p>";
+        document.getElementById('manage-goks-container').innerHTML = content;
+        disableLoader();
+        return;
+    }
+
+    let validateButton = "<button type='submit' class='validate-buttons button'><img src='../img/icons/check-bold.svg' alt='Check' class='icon'/></button>";
+
     realData.reverse();
     realData.forEach((data) => {
-
         let content = "";
         content += "<div class='no-margin goks-list-item' style='justify-content: center;align-items: normal;flex-direction: column;'>";
         content += "<div style='margin: 10px;'>" + data.id + "</div>";
@@ -40,7 +105,7 @@ if (realData.length > 0) {
     let updateForms = document.getElementsByClassName('update-form');
     for (let i = 0; i < updateForms.length; i++) {
         let form_ = updateForms[i];
-        form_.addEventListener("submit", async function(event) {
+        form_.addEventListener("submit", async function (event) {
             event.preventDefault();
             ableLoader();
 
@@ -53,5 +118,6 @@ if (realData.length > 0) {
             await updateStatus(id, novaData, novaMensagem);
             window.location.replace("manage-goks.html");
         });
+
     }
 }

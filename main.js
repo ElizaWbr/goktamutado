@@ -119,6 +119,44 @@ async function getGoksRealStatists() {
 }
 window.getGoksRealStatists = getGoksRealStatists;
 
+async function getGoksRealStatistsLimit(limit, lastDoc = null) {
+    try {
+        let query = firebase.firestore().collection("gokStatus").orderBy("data", "desc").limit(limit);
+        if (lastDoc) {
+            query = query.startAfter(lastDoc);
+        }
+        const snapshot = await query.get();
+
+        const goksRealStatistics = snapshot.docs.map(doc => {
+            const data = doc.data();
+            return {
+                ...data,
+                id: doc.id
+            };
+        });
+
+        let currentRole = await getCurrentUserRole();
+        if (currentRole == "admin") {
+            console.log(goksRealStatistics);
+        }
+
+        return {
+            data: goksRealStatistics,
+            lastDoc: snapshot.docs[snapshot.docs.length - 1] || null,
+            hasMore: snapshot.docs.length === limit
+        };
+
+    } catch (e) {
+        alert("Um erro foi gerado, por favor tire um print completo dessa tela e envie para Elisa: " + JSON.stringify(e));
+        return {
+            data: [],
+            lastDoc: null,
+            hasMore: false
+        };
+    }
+}
+window.getGoksRealStatistsLimit = getGoksRealStatistsLimit;
+
 async function getJacometroStatists(){
     try {
         const snapshot = await firebase.firestore().collection("jackometro").get();
